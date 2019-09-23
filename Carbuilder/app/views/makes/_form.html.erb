@@ -21,6 +21,11 @@
     <%= form.text_field :country %>
   </div>
 
+  <div class="field">
+    <%= form.label :car_ids%><br>
+    <%= form.collection_check_boxes(:car_ids, @parts, :id, :model)%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
