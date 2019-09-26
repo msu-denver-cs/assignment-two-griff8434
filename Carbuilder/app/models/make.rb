@@ -1,3 +1,3 @@
 class Make < ApplicationRecord
-  has_many:car
+  has_many :car
 end
