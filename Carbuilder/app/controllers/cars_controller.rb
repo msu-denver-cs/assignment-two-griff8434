@@ -10,6 +10,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @parts = Part.all
   end
 
   # GET /cars/new
@@ -31,6 +32,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
 
     respond_to do |format|
+      for nil; NilClass
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }
         format.json { render :show, status: :created, location: @car }
@@ -73,6 +75,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:model, :VIN, :part_ids => [], :make_id=>[])
+      params.require(:car).permit(:model, :VIN, :parts_ids => [], :make_id)
     end
 end
